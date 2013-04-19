@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+	"-//Apache Software Foundation//DTD Tiles Configuration 2.1//EN"
+	"http://tiles.apache.org/dtds/tiles-config_2_1.dtd">
+
+<tiles-definitions>
+	<definition name="huodong" extends="default">
+	<put-attribute name="title" value="活动列表"></put-attribute>
+		<put-attribute name="body"
+			value="/WEB-INF/views/activity/huodongzhuanti.jsp" />
+	</definition>
+	<definition name="createhuodong" extends="default">
+	<put-attribute name="title" value="活动列表"></put-attribute>
+		<put-attribute name="body"
+			value="/WEB-INF/views/activity/createHuodong.jsp" />
+	</definition>
+</tiles-definitions>

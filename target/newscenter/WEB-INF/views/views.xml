@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+	"-//Apache Software Foundation//DTD Tiles Configuration 2.1//EN"
+	"http://tiles.apache.org/dtds/tiles-config_2_1.dtd">
+
+<tiles-definitions>
+	<definition name="uncaughtException" extends="default">
+	<put-attribute name="title" value="出错了"></put-attribute>
+		<put-attribute name="body"
+			value="/WEB-INF/views/uncaughtException.jsp" />
+	</definition>
+	<definition name="test" extends="index">
+	<put-attribute name="title" value="sdfsdfsdfds"></put-attribute>
+		<put-attribute name="body"
+			value="/WEB-INF/views/login.jsp" />
+	</definition>
+
+</tiles-definitions>

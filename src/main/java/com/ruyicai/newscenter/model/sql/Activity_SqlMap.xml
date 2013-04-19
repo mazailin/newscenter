@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="ActivityMap">
+	<resultMap class="com.ruyicai.newscenter.pojo.Activity" id="Activity">
+		<!--系统管理员 映射 -->
+		<result column="activity_id" jdbcType="BIGINT" property="activity_id" />
+		<result column="activity_title" jdbcType="VARCHAR" property="activity_title" />
+		<result column="activity_url" jdbcType="VARCHAR" property="activity_url" />
+		<result column="activity_content" jdbcType="VARCHAR" property="activity_content" />
+		<result column="activity_image" jdbcType="VARCHAR" property="activity_image" />
+		<result column="type" jdbcType="INTEGER" property="type" />
+		<result column="create_time" jdbcType="VARCHAR" property="create_time" />
+		<result column="website_id" jdbcType="VARCHAR" property="website_id" />
+	</resultMap>
+	<insert id="insertActivity" parameterClass="com.ruyicai.newscenter.pojo.Activity">
+		insert into newsactivity
+		(title,content,image,activity_url,createtime,website_id,type)
+		values(#activity_title#,#activity_content#,#activity_image#,#activity_url#,
+		#create_time#,#website_id#,#type#)
+	</insert>
+	<select id="selectAllActivityForList" resultMap="Activity" parameterClass="Activity">
+		SELECT	* FROM newsactivity  WHERE TYPE=#type# AND website_id=#website_id#
+	   	<dynamic>	
+	   	<isNotEmpty prepend="AND " property="activity_title">title=#activity_title#</isNotEmpty>
+		</dynamic>
+		ORDER BY  createtime DESC
+	 </select>
+</sqlMap>
